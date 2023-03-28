@@ -13,6 +13,66 @@ window.addEventListener('DOMContentLoaded', event => {
 
     $('.fade').css('opacity', 1);
 
+    // Define a range of time values in hours
+    const timeRange = [0, 3000];
+
+    // Calculate the cost of Local Solution and Cloud Compute for each time value
+    const localSolutionCosts = timeRange.map(function (time) {
+        return (600 + 159) + (22 * 100) * time / 100000;
+    });
+    const cloudComputeCosts = timeRange.map(function (time) {
+        return 0.4 * time;
+    });
+
+    // Create chart with calculated data
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            // Use the calculated costs as the chart data
+            labels: timeRange,
+            datasets: [{
+                label: 'Local Solution',
+                data: localSolutionCosts,
+                borderColor: 'red'
+            }, {
+                label: 'Cloud Compute',
+                data: cloudComputeCosts,
+                borderColor: 'grey'
+            }]
+        },
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Comparison of Local Solution and Cloud Compute'
+                }
+            },
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Time (hours)'
+                    },
+                    grid: {
+                        color: 'rgba(0, 0, 0, 0.1)',
+                        borderDash: [5, 5]
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Cost (USD)'
+                    }
+                }
+            }
+        }
+    });
+
+    chart.data.datasets[0].data = localSolutionCosts;
+    chart.data.datasets[1].data = cloudComputeCosts;
+    chart.update();
+
     $('[lang="zh"]').hide();
 
     $('#languageToggle').click(function () {
@@ -65,6 +125,7 @@ window.addEventListener('DOMContentLoaded', event => {
         $.get('/api/comparison', { vramSize: vramSize, efficiency: efficiency }, function (data) {
 
             updateComparisonElements(data);
+            updateChart(data);
 
             $('#chooseForMe').collapse('hide');
             $('.fade').css('opacity', 1);
@@ -82,6 +143,7 @@ window.addEventListener('DOMContentLoaded', event => {
         $.get(`/api/comparison/${graphicsCardId}`, function (data) {
 
             updateComparisonElements(data);
+            updateChart(data);
 
             $('#iWillChoose').collapse('hide');
             $('.fade').css('opacity', 1);
@@ -111,4 +173,24 @@ function updateComparisonElements(response) {
 
     // Update Break-even point
     $('#breakEvenPoint').text(response.breakEvenPoint);
+}
+
+function updateChart(response) {
+    // Define a range of time values in hours
+    const timeRange = [0, Math.ceil(response.breakEvenPoint / 1000) * 1000];
+
+    // Calculate the cost of Local Solution and Cloud Compute for each time value
+    const localSolutionCosts = timeRange.map(function (time) {
+        return (response.costOfRig + response.graphicsCard.msrp) + (response.costOfElectricity * response.graphicsCard.powerDraw) * time / 100000;
+    });
+    const cloudComputeCosts = timeRange.map(function (time) {
+        return response.cheapestCloudCompute.costPerHour * time;
+    });
+
+    // Update the chart with the calculated data
+    const chart = Chart.getChart("myChart");
+    chart.data.labels = timeRange;
+    chart.data.datasets[0].data = localSolutionCosts;
+    chart.data.datasets[1].data = cloudComputeCosts;
+    chart.update();
 }

@@ -32,23 +32,37 @@
     </nav>
     <div class="container vh-100">
         <div class="container" style="background-image: url('assets/img/banner.webp');">
-            <h1 class="pt-5 px-1 my-3 text-center text-white"><span lang="en">Cost Comparison</span><span
-                    lang="zh">成本比較</span></h1>
-            <h5 class="pb-5 px-1 my-3 text-center text-white"><span lang="en">For Small-scale Machine Learning
-                    Projects</span><span lang="zh">適用於小規模機器學習專案</span></h5>
+            <h1 class="pt-5 px-1 my-3 text-center text-white">
+                <span lang="en">Cost Comparison</span><span lang="zh">成本比較</span>
+            </h1>
+            <h5 class="pb-5 px-1 my-3 text-center text-white">
+                <span lang="en">
+                    For Small-scale Machine Learning
+                    Projects
+                </span><span lang="zh">適用於小規模機器學習專案</span>
+            </h5>
         </div>
         <div class="container bg-white my-3">
             <div class="row gx-3 my-2 py-5">
                 <div class="col-md-8 col-12 my-2">
-                    <h5 class="my-3 text-center text-bg-white"><span lang="en">Let's get started.</span><span
-                            lang="zh">開始吧。</span></h5>
+                    <h5 class="my-3 text-center text-bg-white">
+                        <span lang="en">Let's get started.</span><span lang="zh">開始吧。</span>
+                    </h5>
                 </div>
                 <div class="col-md-4 col-12">
                     <div class="d-grid gap-2">
-                        <button type="button" class="btn btn-primary" id="chooseForMeButton"><span lang="en">Choose the
-                                best graphics card for me</span><span lang="zh">為我選擇最佳顯示卡</span></button>
-                        <button type="button" class="btn btn-secondary" id="iWillChooseButton"><span lang="en">I want to
-                                choose for myself</span><span lang="zh">我想自己選擇</span></button>
+                        <button type="button" class="btn btn-primary" id="chooseForMeButton">
+                            <span lang="en">
+                                Choose the
+                                best graphics card for me
+                            </span><span lang="zh">為我選擇最佳顯示卡</span>
+                        </button>
+                        <button type="button" class="btn btn-secondary" id="iWillChooseButton">
+                            <span lang="en">
+                                I want to
+                                choose for myself
+                            </span><span lang="zh">我想自己選擇</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -56,15 +70,22 @@
         <div id="chooseForMe" class="container bg-primary my-3 collapse">
             <div class="row gx-3 my-2 py-3">
                 <div class="col-md-8 col-12 my-2">
-                    <h5 class="my-5 mx-3 text-center text-bg-primary"><span lang="en">To find the best graphics card for
+                    <h5 class="my-5 mx-3 text-center text-bg-primary">
+                        <span lang="en">
+                            To find the best graphics card for
                             your use case, specify the amount of VRAM you need for your training purposes and whether to
-                            prioritize training efficiency or price.</span><span
-                            lang="zh">為了找到最適合您用途的顯示卡，請指定您在訓練中需要的VRAM容量，以及是要優先考慮訓練效率還是價格。</span></h5>
+                            prioritize training efficiency or price.
+                        </span><span lang="zh">為了找到最適合您用途的顯示卡，請指定您在訓練中需要的VRAM容量，以及是要優先考慮訓練效率還是價格。</span>
+                    </h5>
                 </div>
                 <div class="col-md-4 col-12 bg-secondary">
                     <div class="m-3">
-                        <label for="vramSlider" class="form-label text-bg-secondary"><span lang="en">Total
-                                VRAM</span><span lang="zh">總VRAM</span></label>
+                        <label for="vramSlider" class="form-label text-bg-secondary">
+                            <span lang="en">
+                                Total
+                                VRAM
+                            </span><span lang="zh">總VRAM</span>
+                        </label>
                         <input type="range" class="form-range" min="4" max="24" step="4" id="vramSlider">
                         <div class="d-flex justify-content-between text-bg-secondary">
                             <span>4 GB</span>
@@ -78,32 +99,43 @@
                     <div class="m-3">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="efficiencyPrice" id="efficiencyRadio"
-                                value="efficiency" checked>
-                            <label class="form-check-label text-bg-secondary" for="efficiencyRadio"><span
-                                    lang="en">Efficiency</span><span lang="zh">效率</span></label>
+                                   value="efficiency" checked>
+                            <label class="form-check-label text-bg-secondary" for="efficiencyRadio">
+                                <span lang="en">Efficiency</span><span lang="zh">效率</span>
+                            </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="efficiencyPrice" id="priceRadio"
-                                value="price">
-                            <label class="form-check-label text-bg-secondary" for="priceRadio"><span
-                                    lang="en">Price</span><span lang="zh">價格</span></label>
+                                   value="price">
+                            <label class="form-check-label text-bg-secondary" for="priceRadio">
+                                <span lang="en">Price</span><span lang="zh">價格</span>
+                            </label>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-primary m-3" id="goForMeButton"><span lang="en">Go</span><span
-                            lang="zh">開始</span></button>
+                    <button type="button" class="btn btn-primary m-3" id="goForMeButton">
+                        <span lang="en">Go</span><span lang="zh">開始</span>
+                    </button>
                 </div>
             </div>
         </div>
         <div id="iWillChoose" class="container bg-primary my-3 collapse">
             <div class="row gx-3 my-2 py-3">
                 <div class="col-md-8 col-12 my-2">
-                    <h5 class="my-5 mx-3 text-center text-bg-primary"><span lang="en">Select a specific graphics
-                            card.</span><span lang="zh">選擇特定顯示卡。</span></h5>
+                    <h5 class="my-5 mx-3 text-center text-bg-primary">
+                        <span lang="en">
+                            Select a specific graphics
+                            card.
+                        </span><span lang="zh">選擇特定顯示卡。</span>
+                    </h5>
                 </div>
                 <div class="col-md-4 col-12 bg-secondary">
                     <div class="m-3">
-                        <label for="graphicsCardDropdown" class="form-label text-bg-secondary"><span lang="en">Graphics
-                                Card</span><span lang="zh">顯示卡</span></label>
+                        <label for="graphicsCardDropdown" class="form-label text-bg-secondary">
+                            <span lang="en">
+                                Graphics
+                                Card
+                            </span><span lang="zh">顯示卡</span>
+                        </label>
                         <select class="form-select" id="graphicsCardDropdown">
                             <option selected>Select a graphics card</option>
                             <option value="1">Graphics Card 1</option>
@@ -111,16 +143,21 @@
                             <option value="3">Graphics Card 3</option>
                         </select>
                     </div>
-                    <button type="button" class="btn btn-primary m-3" id="goIWillButton"><span lang="en">Go</span><span
-                            lang="zh">開始</span></button>
+                    <button type="button" class="btn btn-primary m-3" id="goIWillButton">
+                        <span lang="en">Go</span><span lang="zh">開始</span>
+                    </button>
                 </div>
             </div>
         </div>
         <div class="container my-3">
             <div class="row">
                 <div class="col-md-4 col-12 my-2 bg-white">
-                    <h5 class="my-5 mx-3 fade" id="finalCompareText"><span lang="en">Comparison of local training with our currently recommended card
-                            and cloud compute cost.</span><span lang="zh">本地訓練與我們目前推薦的顯示卡及雲端計算成本的比較。</span></h5>
+                    <h5 class="my-5 mx-3 fade" id="finalCompareText">
+                        <span lang="en">
+                            Comparison of local training with our currently recommended card
+                            and cloud compute cost.
+                        </span><span lang="zh">本地訓練與我們目前推薦的顯示卡及雲端計算成本的比較。</span>
+                    </h5>
                 </div>
                 <div class="col-md-4 col-12 my-2 bg-primary text-bg-primary">
                     <h5 class="my-3 fade"><span lang="en">Graphics Card</span><span lang="zh">顯示卡</span></h5>
@@ -153,12 +190,13 @@
                     </table>
                 </div>
                 <div class="col-md-4 col-12 my-3 bg-secondary text-bg-secondary"
-                    style="background-image:assets/img/sample_logo.png">
+                     style="background-image:assets/img/sample_logo.png">
                     <h5 class="my-3 fade"><span lang="en">Cloud Compute Service</span><span lang="zh">雲端計算服務</span></h5>
                     <table class="table text-bg-secondary fade">
                         <tbody>
                             <tr>
-                                <td><img src="assets/img/sample_logo.png" alt="Cloud Compute Service Logo" height="100">
+                                <td>
+                                    <img src="assets/img/sample_logo.png" alt="Cloud Compute Service Logo" height="100">
                                 </td>
                             </tr>
                             <tr>
@@ -181,26 +219,38 @@
         <div class="container my-3">
             <div class="row gx-3 my-2 py-5">
                 <div class="col-md-8 col-12 my-2 bg-secondary">
-                    <h5 class="my-5 mx-3 text-center text-bg-secondary fade"><span lang="en">The cost of building the
-                            rig to house the graphics card is assumed to be a fixed cost of $</span><span
-                            lang="zh">建立包含顯示卡的裝置的成本被假定為固定成本，為</span><span id="costOfRig">600</span><span lang="en">. The
-                            cost of electricity is assumed to be a fixed cost of </span><span
-                            lang="zh">美元。電力成本被假定為固定成本，為每千瓦時</span></span><span id="costOfElectricity">22</span><span
-                            lang="en"> cents/kwh. For your particular graphics card, cloud compute becomes more
-                            expensive after:</span><span lang="zh">美分/kwh。對於您選擇的顯示卡，在以下訓練時數後，雲計算變得更加昂貴：</span></h5>
+                    <h5 class="my-5 mx-3 text-center text-bg-secondary fade">
+                        <span lang="en">
+                            The cost of building the
+                            rig to house the graphics card is assumed to be a fixed cost of $
+                        </span><span lang="zh">建立包含顯示卡的裝置的成本被假定為固定成本，為</span><span id="costOfRig">600</span><span lang="en">
+                            . The
+                            cost of electricity is assumed to be a fixed cost of
+                        </span><span lang="zh">美元。電力成本被假定為固定成本，為每千瓦時</span></span><span id="costOfElectricity">22</span><span lang="en">
+                            cents/kwh. For your particular graphics card, cloud compute becomes more
+                            expensive after:
+                        </span><span lang="zh">美分/kwh。對於您選擇的顯示卡，在以下訓練時數後，雲計算變得更加昂貴：</span>
+                    </h5>
                 </div>
                 <div class="col-md-4 col-12 bg-primary">
                     <div class="d-grid gap-2">
-                        <h1 class="pt-3 px-1 my-3 text-center text-white bg-secondary-text fade"><span
-                                lang="en">Break-even point</span><span lang="zh">收支平衡點</span></h1>
+                        <h1 class="pt-3 px-1 my-3 text-center text-white bg-secondary-text fade">
+                            <span lang="en">Break-even point</span><span lang="zh">收支平衡點</span>
+                        </h1>
                         <h5 class="pb-3 px-1 my-3 text-center text-white bg-secondary-text fade">
-                            <span id="breakEvenPoint">2008</span><span lang="en"> hours of
-                                training</span><span lang="zh">小時訓練時數</span>
+                            <span id="breakEvenPoint">2008</span><span lang="en">
+                                hours of
+                                training
+                            </span><span lang="zh">小時訓練時數</span>
                         </h5>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="chart-container m-3 pb-5" style="position: relative; height:40vh; width:80vw">
+            <canvas id="myChart"></canvas>
+        </div>
+
 
     </div>
     <!-- Footer-->
@@ -213,6 +263,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Jquery JS-->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+    <!-- Chart.js JS-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
 </body>
