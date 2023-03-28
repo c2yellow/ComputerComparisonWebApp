@@ -64,15 +64,12 @@ window.addEventListener('DOMContentLoaded', event => {
 
             updateComparisonElements(data);
 
-            $('#iWillChoose').collapse('hide');
+            $('#chooseForMe').collapse('hide');
             $('.fade').css('opacity', 1);
 
         }).fail(function (jqXHR, textStatus, errorThrown) {
             console.error("Error: " + textStatus + ": " + errorThrown);
         });
-
-        $('#chooseForMe').collapse('hide');
-        $('.fade').css('opacity', 1);;
     });
 
     $('#goIWillButton').on('click', function () {
