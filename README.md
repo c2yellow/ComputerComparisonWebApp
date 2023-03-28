@@ -7,6 +7,7 @@ This web app consists of a responsive and user-friendly SPA frontend and a backe
 - Responsive design for desktop and mobile devices
 - Fetch list of graphics cards from the backend API
 - Display a full comparison between a specific graphics card combined with other components along with electricity cost versus the cheapest cloud compute solution
+- Multi-language support (English and Chinese)
 
 ## Technologies
 
