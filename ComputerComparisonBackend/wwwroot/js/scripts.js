@@ -23,6 +23,8 @@ window.addEventListener('DOMContentLoaded', event => {
         $('#iWillChoose').collapse('hide');
     });
 
+    $('.fade').css('opacity', 1);
+
     $('#iWillChooseButton').on('click', function () {
 
         const graphicsCardDropdown =  $('#graphicsCardDropdown')
@@ -74,7 +76,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
     $('#goIWillButton').on('click', function () {
 
-        $('.fade').css('opacity', 1);
+        $('.fade').css('opacity', 0);
         const graphicsCardId = $('#graphicsCardDropdown').val();
 
         $.get(`/api/comparison/${graphicsCardId}`, function (data) {
