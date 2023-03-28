@@ -54,11 +54,11 @@ namespace ComputerComparisonBackend.Controllers
         {
             var graphicsCard = efficiency
         ? await _context.GraphicsCards
-            .Where(g => g.Vram > vramSize)
+            .Where(g => g.Vram >= vramSize)
             .OrderByDescending(g => g.TrainingThroughput)
             .FirstOrDefaultAsync()
         : await _context.GraphicsCards
-            .Where(g => g.Vram > vramSize)
+            .Where(g => g.Vram >= vramSize)
             .OrderBy(g => g.Msrp)
             .FirstOrDefaultAsync();
 
@@ -66,7 +66,7 @@ namespace ComputerComparisonBackend.Controllers
             if (graphicsCard == null)
             {
                 graphicsCard = await _context.GraphicsCards
-                    .OrderBy(g => g.Vram)
+                    .OrderByDescending(g => g.Vram)
                     .FirstOrDefaultAsync();
             }
 
