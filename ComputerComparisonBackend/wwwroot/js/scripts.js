@@ -9,7 +9,9 @@
 
 window.addEventListener('DOMContentLoaded', event => {
 
-    var graphicsCardsLoaded = false
+    var graphicsCardsLoaded = false;
+
+    $('.fade').css('opacity', 1);
 
     $('[lang="zh"]').hide();
 
@@ -22,8 +24,6 @@ window.addEventListener('DOMContentLoaded', event => {
         $('#chooseForMe').collapse('show');
         $('#iWillChoose').collapse('hide');
     });
-
-    $('.fade').css('opacity', 1);
 
     $('#iWillChooseButton').on('click', function () {
 
@@ -81,7 +81,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
         $.get(`/api/comparison/${graphicsCardId}`, function (data) {
 
-            updateComparisonElements(data)
+            updateComparisonElements(data);
 
             $('#iWillChoose').collapse('hide');
             $('.fade').css('opacity', 1);
